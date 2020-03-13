@@ -48,7 +48,7 @@ cardInfo = document.createElement('div'),
 Name = document.createElement('h3'),
 UserName = document.createElement('p'),
 location = document.createElement('p'),
-link = document.createElement('a'),
+ancore = document.createElement('a'),
 newImg = document.createElement('img'),
 profile = document.createElement('p'),
 followers = document.createElement('p'),
@@ -62,12 +62,17 @@ Name.classList.add('name');
 UserName.classList.add('username');
 
 
-link.textContent = object.html_url;
+
 newImg.src = object.avatar_url;
 Name.textContent = object.name;
 UserName.textContent = object.login;
 location.textContent = `Location:  ${object.location}`;
-profile.textContent = `Profile:  ${link}`;
+ancore.href = object.html_url;
+ancore.textContent = object.html_url;
+
+profile.textContent = `Profile:  `;
+
+
 followers.textContent = `Followers:  ${object.followers}`;
 following.textContent = `Following:  ${object.following}`;
 bio.textContent = `Bio: ${object.bio}`;
@@ -75,9 +80,12 @@ bio.textContent = `Bio: ${object.bio}`;
 newCard.appendChild(newImg);
 newCard.appendChild(cardInfo);
 cardInfo.appendChild(Name);
+
 cardInfo.appendChild(UserName);
 cardInfo.appendChild(location);
-cardInfo.appendChild(profile);
+cardInfo.appendChild(profile)
+profile.appendChild(ancore);
+
 cardInfo.appendChild(followers);
 cardInfo.appendChild(following);
 cardInfo.appendChild(bio);
